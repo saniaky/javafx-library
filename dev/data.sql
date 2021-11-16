@@ -1,22 +1,42 @@
-INSERT INTO library.publisher (name, address, phone) VALUES ('O''Reilly Media', 'Newton, MA', '1 (800) 889-8969');
-INSERT INTO library.publisher (name, address, phone) VALUES ('Simon & Schuster', 'New York, NY', '1 (800) 223-2336');
+INSERT INTO publisher (name, address, phone)
+VALUES ('ABC publishing', '173 Spring street', '123-837-6673'),
+       ('Wonders publishing house', '20 North Dogwood st.', '123-382-3787');
 
-INSERT INTO library.book (book_id, title, publisher_name) VALUES (1, 'The Captain''s Daughter', 'Simon & Schuster');
-INSERT INTO library.book (book_id, title, publisher_name) VALUES (2, 'Head First Java', 'O''Reilly Media');
+INSERT INTO book (book_id, title, publisher_name)
+VALUES (123456, 'Java 123', 'ABC publishing'),
+       (222878, 'Let do Java', 'ABC publishing'),
+       (234765, 'How to Java', 'Wonders publishing house'),
+       (232323, 'Java for beginners', 'Wonders publishing house');
 
-INSERT INTO library.book_authors (book_id, author_name) VALUES (1, 'Alexander Pushkin');
-INSERT INTO library.book_authors (book_id, author_name) VALUES (2, 'Bert Bates');
-INSERT INTO library.book_authors (book_id, author_name) VALUES (2, 'Kathy Sierra');
+INSERT INTO book_authors (book_id, author_name)
+VALUES (123456, 'Tom R. Kendel'),
+       (123456, 'Randy John'),
+       (123456, 'Sandy Mark'),
+       (222878, 'William Nader'),
+       (234765, 'Dany Scot'),
+       (232323, 'Linda Thomas');
 
+INSERT INTO library_branch (branch_id, branch_name, address)
+VALUES (111, 'West Park ', '525 down town'),
+       (222, 'North Park', '77 Springs av.');
 
-INSERT INTO library.library_branch (branch_id, branch_name, address) VALUES (1, 'Independence Branch', '4024 N Elston Ave, Chicago, IL 60618');
-INSERT INTO library.library_branch (branch_id, branch_name, address) VALUES (2, 'Harold Washington Library Center', '400 S State St, Chicago, IL 60605');
+INSERT INTO book_copies (book_id, branch_id, no_of_copies)
+VALUES (123456, 111, 20),
+       (222878, 111, 19),
+       (234765, 111, 2),
+       (232323, 111, 3),
+       (123456, 222, 24),
+       (222878, 222, 2),
+       (234765, 222, 6),
+       (232323, 222, 8);
 
-INSERT INTO library.book_copies (book_id, branch_id, no_of_copies) VALUES (1, 1, 2);
-INSERT INTO library.book_copies (book_id, branch_id, no_of_copies) VALUES (1, 2, 0);
-INSERT INTO library.book_copies (book_id, branch_id, no_of_copies) VALUES (2, 1, 3);
-INSERT INTO library.book_copies (book_id, branch_id, no_of_copies) VALUES (2, 2, 19);
+INSERT INTO borrower (card_no, name, address, phone)
+VALUES (1234, 'Tom John', '123 Spring st.', '123-456-7890'),
+       (1256, 'Sandra Thomas', '234 Williams St.', '123-983-8847'),
+       (2453, 'Sarah Dallas', '674 North Park St.', '123-738-0938');
 
-INSERT INTO library.borrower (card_no, name, address, phone) VALUES (1, 'Hanna K', 'Chicago, IL', '872 000 000');
-INSERT INTO library.borrower (card_no, name, address, phone) VALUES (2, 'Jeremy Smith', 'Dallas, TX', '777 777 777');
-INSERT INTO library.book_loans (book_id, branch_id, card_no, date_out, due_date) VALUES (2, 2, 1, '2021-11-08', null);
+INSERT INTO book_loans(book_id, branch_id, card_no, date_out, due_date)
+VALUES (123456, 111, 1234, '2021-10-10', '2021-12-02'),
+       (222878, 111, 1234, '2021-10-10', '2021-12-02'),
+       (234765, 111, 1234, '2021-10-20', '2021-12-12'),
+       (232323, 222, 2453, '2021-12-03', '2022-02-02');

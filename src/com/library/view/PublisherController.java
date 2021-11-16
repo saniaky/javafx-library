@@ -1,4 +1,4 @@
-package com.company.view;
+package com.library.view;
 
 public class PublisherController {
 }

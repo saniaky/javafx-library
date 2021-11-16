@@ -1,13 +1,12 @@
-package com.company;
+package com.library;
 
-import com.company.service.DatabaseService;
-import com.company.view.ViewController;
+import com.library.service.DatabaseService;
+import com.library.view.ViewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -59,15 +58,7 @@ public class MainApp extends Application {
     }
 
     public void editBook() {
-        var view = showView("view/BookEditDialog.fxml");
-
-        // Create the dialog Stage.
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Edit Book");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner(primaryStage);
-        Scene scene = new Scene(view);
-        dialogStage.setScene(scene);
+        showView("view/BookEditDialog.fxml");
     }
 
     private AnchorPane showView(String viewName) {

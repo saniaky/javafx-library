@@ -1,4 +1,4 @@
-package com.company;
+package com.library;
 
 import javafx.scene.control.Alert;
 import javafx.stage.Window;

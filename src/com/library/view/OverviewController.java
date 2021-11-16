@@ -1,4 +1,4 @@
-package com.company.view;
+package com.library.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

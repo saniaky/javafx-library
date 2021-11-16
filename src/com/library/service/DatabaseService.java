@@ -1,6 +1,6 @@
-package com.company.service;
+package com.library.service;
 
-import com.company.model.Book;
+import com.library.model.Book;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.sql.Connection;

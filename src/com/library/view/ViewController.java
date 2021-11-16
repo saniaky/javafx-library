@@ -1,6 +1,6 @@
-package com.company.view;
+package com.library.view;
 
-import com.company.MainApp;
+import com.library.MainApp;
 
 public abstract class ViewController {
 

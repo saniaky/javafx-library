@@ -1,4 +1,4 @@
-package com.company.model;
+package com.library.model;
 
 import javafx.beans.property.StringProperty;
 
